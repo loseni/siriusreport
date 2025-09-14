@@ -1,0 +1,39 @@
+{% extends "reportingKYC/base.html" %}
+
+{% block title %}Sirius | Etat de traitement{% endblock %}
+
+{% block content %}
+    <div class="col-sm-10 mx-0 px-0">
+                <div class="card">
+                <div class="card-body">
+                    <form  methode ="post" action= "">
+                        {% csrf_token %}
+                        <div class ="row">
+                                <div class="col-2 mb-3">
+                                    <label for="debutPeriode" class="form-label">Debut période</label>
+                                    <input type="date" class="form-control" id="debutPeriode">
+                                </div>
+                                <div class="col-2 mb-3">
+                                    <label for="finPeriode" class="form-label">Fin période</label>
+                                    <input type="date" class="form-control" id="debutPeriode">
+                                </div>
+                                <div class="col-3 mb-3">
+                                    <label for="base" class="form-label">Base</label>
+                                    <select class="form-select" aria-label="Disabled select example" id="base">
+                                        <option selected></option>
+                                        <option value="1">OMCI</option>
+                                        <option value="2">OFMS</option>
+                                        <option value="3">OMRDC</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button type="submit" class="btn btn-outline-dark">Valider</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                </div>
+    </div>
+{%endblock%}
