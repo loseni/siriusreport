@@ -11,7 +11,7 @@ class Base(models.Model):
     
     class Meta:
         indexes = [
-            models.index(fields = ["codeIsoBase"])
+            models.Index(fields = ["codeIsoBase"])
         ]
     
     def __str__(self):

@@ -6,3 +6,7 @@
   background-color: #f8f9fa;
   border-left: 6px solid orange;
 }
+
+.nav-link,.nav-link:focus, .nav-link:hover {
+  color: white 
+}

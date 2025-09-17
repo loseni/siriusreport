@@ -15,17 +15,17 @@
   <body>
     <nav class="navbar navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'reportingKYC:accueil' %}">
+            <a class="navbar-brand" href="{% url 'reportingKYC:home' %}">
                 <img src="{% static 'reportingKYC/images/logo.png'%}" alt="" width="35" height="35" class="d-inline-block align-text-top">
                 Sirius Report
             </a>
             <li class="nav-item dropdown">
 
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                   <i class="bi bi-person-fill"></i> Loseni DEMBELE
+                   <i class="bi bi-person-fill"></i> {{ user.get_full_name }} 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Deconnexion</a></li>
+                    <li><a class="dropdown-item" href="{% url 'connexion:deconnexion' %}">Deconnexion</a></li>
                 </ul>
             </li>
 
@@ -37,7 +37,7 @@
                 <div class="card">
                 <div class="card-body mx-0 px-0 vh-100">
                     <div class="list-group">
-                    <a class="list-group-item list-group-item-action" href="{% url 'reportingKYC:accueil' %}"> <i class="bi bi-speedometer mx-1"> </i> Dashboard</a>
+                    <a class="list-group-item list-group-item-action" href="{% url 'reportingKYC:home' %}"> <i class="bi bi-speedometer mx-1"> </i> Dashboard</a>
                     <a class="list-group-item list-group-item-action" href="{% url 'reportingKYC:etatTraitement' %}"><i class="bi bi-graph-up-arrow mx-1"></i>Etat de traitement</a>
                     <a class="list-group-item list-group-item-action" href="#list-messages">Focus traitement</a>
                     <a class="list-group-item list-group-item-action" href="#list-settings">Alertes TNO</a>
