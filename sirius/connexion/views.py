@@ -18,4 +18,4 @@ def connexion(request):
 @login_required
 def deconnexion(request):
     logout(request)  # supprime la session utilisateur
-    return redirect('connexion:connexion') 
+    return redirect('connexion:connexion')

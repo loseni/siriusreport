@@ -6,30 +6,31 @@
     <div class="col-sm-10 mx-0 px-0">
                 <div class="card">
                     <div class="card-header">
-                        Etat de traitement
+                        Extractions
                     </div>
                 <div class="card-body">
-                    <form  methode ="post">
+                    <form  methode ="post" action ="">
                         {% csrf_token %}
-                        <div class ="row">
+                     <div class ="row">
                                 <div class="col-2 mb-3">
                                     <label for="debutPeriode" class="form-label">Debut période</label>
-                                    <input type="date" class="form-control" id="debutPeriode" value="{{ aujourdhui }}">
+                                    <input type="date" class="form-control" id="debutPeriode">
                                 </div>
                                 <div class="col-2 mb-3">
                                     <label for="finPeriode" class="form-label">Fin période</label>
-                                    <input type="date" class="form-control" id="finPeriode" value= "{{aujourdhui}}">
+                                    <input type="date" class="form-control" id="finPeriode">
                                 </div>
                                 <div class="col-3 mb-3">
                                     <label for="base" class="form-label">Base</label>
                                     <select class="form-select" aria-label="Disabled select example" id="base">
-                                        <option selected value="Toutes les bases">Toutes les bases</option>
+                                        <option selected value ='Toutes les bases'>Toutes les bases</option>
                                         {% for base in bases%}
                                             <option value="{{base.codeIsoBase}}">{{base.libBase}}</option>
                                         {% endfor %}
+                                        
                                     </select>
                                 </div>
-                        </div>
+                    </div>
                         <div class="row">
                             <div class="col-3">
                                 <button type="submit" class="btn btn-outline-dark">Valider</button>
@@ -39,4 +40,7 @@
                 </div>
                 </div>
     </div>
+
+
+    
 {%endblock%}
