@@ -16,16 +16,15 @@
     <nav class="navbar navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'reportingKYC:home' %}">
-                <img src="{% static 'reportingKYC/images/logo.png'%}" alt="" width="35" height="35" class="d-inline-block align-text-top">
+                <img src="{% static 'reportingKYC/images/Orange_small_logo.png'%}" alt="" width="30" height="30" class="d-inline-block align-text-top">
                 Sirius Report
             </a>
             <li class="nav-item dropdown">
-
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    <i class="bi bi-person-fill"></i> {{ user.get_full_name }} 
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="{% url 'connexion:deconnexion' %}">Deconnexion</a></li>
+                    <li><a class="dropdown-item" href="{% url 'connexion:deconnexion' %}"> <i class="bi bi-box-arrow-left mx-2"></i>Deconnexion</a></li>
                 </ul>
             </li>
 

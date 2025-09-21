@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Base
 from datetime import date
+from .forms import EtattraitementForm
 
 
 # Create your views here.
@@ -20,7 +21,17 @@ def etatTraitement(request):
 
 @login_required
 def extractions(request):
-    bases = Base.objects.all()
-    aujourdhui = date.today().isoformat()
-    context = {"bases": bases, "aujourdhui": aujourdhui}
-    return render(request, "reportingKYC/extractions.html", context)
+    if request.method == 'POST':
+        form = EtattraitementForm(request.POST)
+        if form.is_valid():
+            print("Extractions OK")
+            
+
+    else:
+        form = EtattraitementForm()
+        
+    #context = {'form' :  form}
+    return render(request, "reportingKYC/extractions.html", {'form' : form})
+
+def recupererExtraction(request, dateDebut, dateFin, base):
+    print(f"Date debut : {dateDebut} | Date Fin : {dateFin} | Base : {base}")
