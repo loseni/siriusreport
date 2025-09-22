@@ -23,11 +23,16 @@ class EtattraitementForm(forms.Form):
     )
     
     def clean(self):
-        cleanned_data = super().clean()
+        cleaned_data = super().clean()
         dateDebut = cleaned_data.get('dateDebut')
         dateFin = cleaned_data.get('dateFin')
         if dateDebut and dateFin:
             if dateFin < dateDebut:
                 raise forms.ValidationError('La date de fin doit être postérieure à la date de début.')
+            else:
+                if not dateDebut:
+                    self.add_error('dateDebut', 'La date de début est requise.')
+                if not dateFin:
+                    self.add_error('dateFin', 'La date de fin est requise.') 
         return cleaned_data
         

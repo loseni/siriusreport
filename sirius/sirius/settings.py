@@ -126,3 +126,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'connexion/'          # nom de la vue de login
 LOGIN_REDIRECT_URL = 'reportingKYC/'  # redirection après connexion
 LOGOUT_REDIRECT_URL = 'connexion/'
+
+DOSSIER_EXTRACTIONS = r"C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\extractions"
+DOSSIER_COMPLIANCE_EXTRACTIONS_OUTLOOK = "compliance"
+EXPEDITEURS_EXTRACTIONS = ["compliance_eme@gos.orange.com", "compliance_oba@gos.orange.com"]
+OBJETS_EXTRACTIONS = ["Alertes kyc générées et traitées la veille", "Liste alertes kyc en stock"]

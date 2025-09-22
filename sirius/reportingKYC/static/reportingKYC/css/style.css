@@ -12,3 +12,7 @@
 .nav-link:hover {
   color: white
 }
+
+.text-left {
+            text-align: left;
+}

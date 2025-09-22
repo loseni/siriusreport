@@ -11,16 +11,39 @@
                 <div class="card-body">
                     <form  method ="post" action ="">
                         {% csrf_token %}
+                        
+                            <!-- Affichage des erreurs globales -->
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        {% for error in form.non_field_errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            {% endif %}
+                        
                      <div class ="row">
                               <div class="col-2 mb-3">
                                     <label for="{{form.dateDebut.id_for_label}}" class="form-label">{{form.dateDebut.label}}</label>
                                     {{form.dateDebut}}
-                                    
+                                    {% if form.dateDebut.errors %}
+                                        <ul>
+                                            {% for error in form.dateDebut.errors %}
+                                                <li>{{ error }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
                                 </div>
                                 <div class="col-2 mb-3">
                                     <label for="{{form.dateFin.id_for_label}}" class="form-label">{{form.dateFin.label}}</label>
                                     {{form.dateFin}}
-                                    
+                                    {% if form.dateFin.errors %}
+                                        <ul>
+                                            {% for error in form.dateFin.errors %}
+                                                <li>{{ error }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
                                 </div>
                                 <div class="col-3 mb-3">
                                     <label for="{{form.base.id_for_label}}" class="form-label">{{form.base.label}}</label>
@@ -37,22 +60,8 @@
 
                 <div class="row mx-2">
                         <hr>
-
-                <table class="table table-sm">
-                    <thead class="table-light">
-                        <tr>
-                        <th scope="col">Base</th>
-                        <th scope="col">Extraction</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        </tr>
-                        
-                    </tbody>
-                </table>
+                        <!-- Affichage de la table -->
+                        {{ listeExtractionsRecues|safe}}
                 </div>
 
             
@@ -61,5 +70,55 @@
     </div>
 
 
-    
+<!-- Script pour initialiser DataTables -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('table').DataTable({
+            "paging": true,    // Active la pagination
+            "searching": true, // Active la recherche
+            "ordering": true,  // Active le tri
+            "info": true,      // Affiche les informations sur la table
+            "language": {
+                "sEmptyTable": "Aucune donnée disponible",
+                "sInfo": "Affichage de _START_ à _END_ sur _TOTAL_ entrées",
+                "sInfoEmpty": "Affichage de 0 à 0 sur 0 entrée",
+                "sInfoFiltered": "(filtré de _MAX_ entrées au total)",
+                "sInfoPostFix": "",
+                "sLengthMenu": "Afficher _MENU_ éléments",
+                "sLoadingRecords": "Chargement...",
+                "sProcessing": "Traitement...",
+                "sSearch": "Rechercher :",
+                "sZeroRecords": "Aucun résultat trouvé",
+                "oPaginate": {
+                    "sFirst": "Premier",
+                    "sPrevious": "Précédent",
+                    "sNext": "Suivant",
+                    "sLast": "Dernier"
+                },
+                "oAria": {
+                    "sSortAscending": ": activer pour trier la colonne par ordre croissant",
+                    "sSortDescending": ": activer pour trier la colonne par ordre décroissant"
+                }
+            },
+            dom: 'Bfrtip',  // Définit l'emplacement des boutons d'exportation
+                buttons: [
+                    {
+                        extend: 'csv',   // Exporter en CSV
+                        text: 'Exporter en CSV',
+                        className: 'btn btn-primary'
+                    },
+                    {
+                        extend: 'excel', // Exporter en Excel
+                        text: 'Exporter en Excel',
+                        className: 'btn btn-success'
+                    },
+                    {
+                        extend: 'pdf',   // Exporter en PDF
+                        text: 'Exporter en PDF',
+                        className: 'btn btn-danger'
+                    }
+                ]
+        });
+    });
+</script>
 {%endblock%}
