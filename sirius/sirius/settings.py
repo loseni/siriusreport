@@ -131,3 +131,7 @@ DOSSIER_EXTRACTIONS = r"C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\p
 DOSSIER_COMPLIANCE_EXTRACTIONS_OUTLOOK = "compliance"
 EXPEDITEURS_EXTRACTIONS = ["compliance_eme@gos.orange.com", "compliance_oba@gos.orange.com"]
 OBJETS_EXTRACTIONS = ["Alertes kyc générées et traitées la veille", "Liste alertes kyc en stock"]
+FICHIER_AGENT = r"C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\agents.csv"
+
+ENTETE_COLONNE_EME = []
+ENTETE_COLONNE_OBA = []

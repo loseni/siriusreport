@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from .models import Base
+from .models import Base, Agent
 from datetime import date, datetime, time
 from .forms import EtattraitementForm
 from django.http import HttpResponse
@@ -11,11 +11,13 @@ import os
 import pythoncom
 from django.conf import settings
 import pandas as pd
-from django.core.paginator import Paginator
+import re
+
 
 # Create your views here.
 @login_required
 def home(request):
+    chargerExtractions(settings.DOSSIER_EXTRACTIONS)
     context = {"data": "data"}
     return render(request, "reportingKYC/accueil.html", context)
 
@@ -234,3 +236,26 @@ def est_vide(repertoire):
     else:
         print("Le répertoire spécifié n'existe pas.")
         return False
+
+def chargerAgent():
+    fichier_Agent = settings.FICHIER_AGENT
+    agents = pd.read_csv(fichier_Agent,delimiter=';')
+    agents_data = agents.to_dict(orient='records')
+    agents = [Agent(**agent) for agent in agents_data]
+    Agent.objects.bulk_create(agents)
+
+
+def chargerExtractions(repertoire):
+    if not est_vide(repertoire):
+        fichiers = os.listdir(repertoire)
+        fichiers = [fichier for fichier in fichiers if os.path.isfile(os.path.join(repertoire, fichier))]
+        for fichier in fichiers:
+            infosExtraction = re.split('[._]',fichier)
+            extraction = infosExtraction[2]
+            base = infosExtraction[3]
+            dateDonnee = infosExtraction[4][0:10]
+            print(f"Base : {base} | Extraction : {extraction} | Date : {dateDonnee}")
+            alertes =  pd.read_csv(os.path.join(repertoire,fichier), sep='|',nrows=0)
+           # if extraction == "generation"
+            print(alertes)
+                
