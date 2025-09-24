@@ -17,6 +17,11 @@ import re
 # Create your views here.
 @login_required
 def home(request):
+    bases = pd.DataFrame({"bases":list(Base.objects.values_list('codeIsoBase', flat=True))})
+    typeExtraction = pd.DataFrame({"extraction": ["generation","stock"]})
+    extractionsAttentues = bases.merge(typeExtraction, how="cross")
+    print(extractionsAttentues)
+    print("dembele")
     chargerExtractions(settings.DOSSIER_EXTRACTIONS)
     context = {"data": "data"}
     return render(request, "reportingKYC/accueil.html", context)
@@ -31,6 +36,7 @@ def etatTraitement(request):
 
 @login_required
 def extractions(request):
+    supprimerExtractions(settings.DOSSIER_EXTRACTIONS)
     if request.method == 'POST':
         form = EtattraitementForm(request.POST)
         if form.is_valid():
@@ -46,14 +52,14 @@ def extractions(request):
     else:
         form = EtattraitementForm()
 
-    extractionsRecues = listeExtractions(settings.DOSSIER_EXTRACTIONS)
+    detailExtractions = listeExtractions(settings.DOSSIER_EXTRACTIONS)
     
-    context = {'form' :  form, 'listeExtractionsRecues' : extractionsRecues}
+    context = {'form' :  form, 'listeExtractionsRecues' : detailExtractions['fichiers'], "extractionsManquantes": detailExtractions['extractionsManquantes']}
     return render(request, "reportingKYC/extractions.html", context)
 
 def recupererExtraction(dateDebut, dateFin, base):
     print(f"Date debut : {dateDebut} | Date Fin : {dateFin} | Base : {base}")
-    
+    supprimerExtractions(settings.DOSSIER_EXTRACTIONS)
 
     # Initialisation de COM
     pythoncom.CoInitialize()
@@ -127,6 +133,8 @@ def listeExtractions(repertoire):
 
     if est_vide(repertoire):
         fichiers = pd.DataFrame(columns=['Base', 'Activite', 'Extraction','Date','Fichier'])
+        extractionsManquantes = pd.DataFrame(columns=['Base', 'Extraction'])
+        
     else:  
         # Liste tous les éléments (fichiers et dossiers) dans le répertoire
         fichiers = os.listdir(repertoire)
@@ -135,13 +143,37 @@ def listeExtractions(repertoire):
         fichiers = pd.DataFrame(fichiers, columns =['Fichier'])
         fichiers[['Alert','Activite', 'Extraction','Base','Date']] = fichiers['Fichier'].str.split('_',expand=True)
         fichiers['Date'] = fichiers['Date'].str.slice(0,10)
+
+        basesRecues = fichiers[['Base','Extraction']].drop_duplicates()
+        bases = pd.DataFrame({"Base":list(Base.objects.values_list('codeIsoBase', flat=True))})
+        typeExtraction = pd.DataFrame({"Extraction": ["generation","stock"]})
+        extractionsAttentues = bases.merge(typeExtraction, how="cross")
+        extractionsManquantes =   extractionsAttentues.merge(basesRecues, how='outer', indicator=True).query('_merge == "left_only"').drop(columns=['_merge'])
+
+        print("---------------------Extractions attentues---------------------------")
+        print(extractionsAttentues)
+        print("---------------Extractions Reçues---------------")
+        print(basesRecues)
+        print("----------------Extractions non reçues------------------------")
+        print(extractionsManquantes)
+        extractionsManquantes = extractionsManquantes.sort_values(by=['Base','Extraction'])
+        
         fichiers.drop(['Alert'], axis=1,inplace=True)
         fichiers = fichiers[['Base', 'Activite', 'Extraction','Date','Fichier']]
         fichiers = fichiers.sort_values(by=['Base','Extraction','Fichier', 'Date'])
+
+    
+    extractionsManquantes = extractionsManquantes.to_html(classes='table table-sm table-hover',index=False)
+    extractionsManquantes = extractionsManquantes.replace('<thead>', '<thead class="table-light">')
+    extractionsManquantes = extractionsManquantes.replace('<th>', '<th scope="col">')
+
+
     fichiers = fichiers.to_html(classes='table table-sm table-hover',index=False)
     fichiers = fichiers.replace('<thead>', '<thead class="table-light">')
     fichiers = fichiers.replace('<th>', '<th scope="col">')
-    return fichiers
+    resultats = {"fichiers": fichiers, "extractionsManquantes": extractionsManquantes}
+    
+    return resultats
 
 def search_outlook_mails(folder_name, senders=None, subjects=None, date_after=None, date_before=None, attachments_subdir="attachments"):
     # Initialisation de COM dans cette fonction aussi si nécessaire
