@@ -31,7 +31,7 @@ def est_vide(repertoire):
 
 
 def recuperer_extraction(date_debut, date_fin, base):
-    logger.info("|----------------------Debut de recuperation des extractions --------------------------")
+    logger.info("|----------------------Debut de recuperation des extractions --------------------------|")
     tz = pytz.timezone("UTC")
     date_after = tz.localize(datetime.combine(date_debut, datetime.min.time()))
     date_before = tz.localize(datetime.combine(date_fin, time(23, 59, 59)))
@@ -49,7 +49,7 @@ def recuperer_extraction(date_debut, date_fin, base):
         date_before=date_before,
         attachments_subdir=dossier,
     )
-    logger.info("|----------------------Fin de recuperation des extractions --------------------------")
+    logger.info("|----------------------Fin de recuperation des extractions --------------------------|")
     logger.info(f"{len(mails)} mails traités pour extraction")
 
 

@@ -1,0 +1,16 @@
+[ERROR] 2025-09-27 22:31:31,947 django.request:253 - Internal Server Error: /extractions/
+Traceback (most recent call last):
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\views.py", line 39, in extractions
+    nettoyer_repertoire(settings.DOSSIER_EXTRACTIONS)
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\services\extractions.py", line 21, in nettoyer_repertoire
+    os.unlink(chemin)
+PermissionError: [WinError 5] Accès refusé: 'C:\\Users\\MLSD0903\\OneDrive - orange.com\\Bureau\\MEMOIRE\\projet\\siriusReport\\sirius\\reportingKYC\\extractions\\alerte_kyc_stock_GN01_2025-09-272.csv.gz'

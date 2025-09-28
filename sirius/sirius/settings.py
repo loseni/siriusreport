@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import logging
+from logging.handlers import TimedRotatingFileHandler
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-j4h1x#r8v$&#)3ms^ry3&hbky0&#$)qzhvy0g(!29$1c85^g_9'
+SECRET_KEY = "django-insecure-j4h1x#r8v$&#)3ms^ry3&hbky0&#$)qzhvy0g(!29$1c85^g_9"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,53 +34,53 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'connexion',
-    'reportingKYC',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "connexion",
+    "reportingKYC",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'sirius.urls'
+ROOT_URLCONF = "sirius.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [BASE_DIR / "templates"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'sirius.wsgi.application'
+WSGI_APPLICATION = "sirius.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -87,16 +90,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
@@ -104,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -116,19 +119,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # Assure-toi que BASE_DIR est défini
 # BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+LOG_DIR = os.path.join(BASE_DIR, "logs")
+os.makedirs(LOG_DIR, exist_ok=True)
 
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
 os.makedirs(LOG_DIR, exist_ok=True)
@@ -138,40 +142,55 @@ LOGGING = {
     'disable_existing_loggers': False,
 
     'formatters': {
-        'verbose': {
+        'standard': {
             'format': '[{levelname}] {asctime} {name}:{lineno} - {message}',
-            'style': '{',
-        },
-        'simple': {
-            'format': '[{levelname}] {message}',
             'style': '{',
         },
     },
 
     'handlers': {
-        'rotating_file': {
-            'level': 'INFO',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(LOG_DIR, 'django.log'),
-            'maxBytes': 1024 * 1024 * 5,  # 5 MB
-            'backupCount': 3,             # Garde les 3 derniers fichiers
-            'formatter': 'verbose',
-        },
         'console': {
             'class': 'logging.StreamHandler',
-            'formatter': 'simple',
+            'formatter': 'standard',
+        },
+        'info_file_handler': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'info.log'),
+            'when': 'midnight',         # Rotation chaque jour à minuit
+            'interval': 1,
+            'backupCount': 7,           # Garde les logs des 7 derniers jours
+            'formatter': 'standard',
+            'level': 'INFO',
+        },
+        'error_file_handler': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'error.log'),
+            'when': 'midnight',
+            'interval': 1,
+            'backupCount': 7,
+            'formatter': 'standard',
+            'level': 'ERROR',
+        },
+        'debug_file_handler': {
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'debug.log'),
+            'when': 'midnight',
+            'interval': 1,
+            'backupCount': 7,
+            'formatter': 'standard',
+            'level': 'DEBUG',
         },
     },
 
     'loggers': {
         'django': {
-            'handlers': ['console', 'rotating_file'],
+            'handlers': ['console', 'info_file_handler', 'error_file_handler'],
             'level': 'INFO',
             'propagate': True,
         },
         'reportingKYC': {
-            'handlers': ['console', 'rotating_file'],
-            'level': 'INFO',
+            'handlers': ['console', 'info_file_handler', 'error_file_handler', 'debug_file_handler'],
+            'level': 'DEBUG',
             'propagate': False,
         },
     },
@@ -179,14 +198,20 @@ LOGGING = {
 
 
 
-LOGIN_URL = 'connexion/'          # nom de la vue de login
-LOGIN_REDIRECT_URL = 'reportingKYC/'  # redirection après connexion
-LOGOUT_REDIRECT_URL = 'connexion/'
+LOGIN_URL = "connexion/"  # nom de la vue de login
+LOGIN_REDIRECT_URL = "reportingKYC/"  # redirection après connexion
+LOGOUT_REDIRECT_URL = "connexion/"
 
 DOSSIER_EXTRACTIONS = r"C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\extractions"
 DOSSIER_COMPLIANCE_EXTRACTIONS_OUTLOOK = "compliance"
-EXPEDITEURS_EXTRACTIONS = ["compliance_eme@gos.orange.com", "compliance_oba@gos.orange.com"]
-OBJETS_EXTRACTIONS = ["Alertes kyc générées et traitées la veille", "Liste alertes kyc en stock"]
+EXPEDITEURS_EXTRACTIONS = [
+    "compliance_eme@gos.orange.com",
+    "compliance_oba@gos.orange.com",
+]
+OBJETS_EXTRACTIONS = [
+    "Alertes kyc générées et traitées la veille",
+    "Liste alertes kyc en stock",
+]
 FICHIER_AGENT = r"C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\agents.csv"
 
 ENTETE_COLONNE_EME = []

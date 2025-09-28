@@ -7,4 +7,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path("etatTraitement/",views.etatTraitement, name="etatTraitement"),
     path('extractions/',views.extractions, name= 'extractions'),
+    path('importer-extractions/',views.importerExtractions, name='importer-extractions')
 ] 

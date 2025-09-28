@@ -1,0 +1,267 @@
+[INFO] 2025-09-27 22:28:08,010 django.utils.autoreload:667 - Watching for file changes with StatReloader
+[INFO] 2025-09-27 22:31:17,474 django.server:213 - "GET / HTTP/1.1" 200 5693
+[INFO] 2025-09-27 22:31:17,475 django.server:213 - "GET / HTTP/1.1" 200 5693
+[INFO] 2025-09-27 22:31:17,711 django.server:81 - - Broken pipe from ('127.0.0.1', 55964)
+[INFO] 2025-09-27 22:31:17,766 django.server:81 - - Broken pipe from ('127.0.0.1', 55963)
+[INFO] 2025-09-27 22:31:17,787 django.server:81 - - Broken pipe from ('127.0.0.1', 55971)
+[INFO] 2025-09-27 22:31:17,787 django.server:81 - - Broken pipe from ('127.0.0.1', 55970)
+[WARNING] 2025-09-27 22:31:18,206 django.request:253 - Not Found: /favicon.ico
+[INFO] 2025-09-27 22:31:18,209 django.server:81 - - Broken pipe from ('127.0.0.1', 55974)
+[INFO] 2025-09-27 22:31:31,516 reportingKYC.views:38 - Chargement de la vue extractions
+[INFO] 2025-09-27 22:31:31,621 reportingKYC.views:38 - Chargement de la vue extractions
+[INFO] 2025-09-27 22:31:31,732 reportingKYC.services.extractions:24 - Répertoire vidé : C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\extractions
+[INFO] 2025-09-27 22:31:31,932 django.server:213 - "GET /extractions/ HTTP/1.1" 200 11622
+[ERROR] 2025-09-27 22:31:31,947 django.request:253 - Internal Server Error: /extractions/
+Traceback (most recent call last):
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\views.py", line 39, in extractions
+    nettoyer_repertoire(settings.DOSSIER_EXTRACTIONS)
+  File "C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\services\extractions.py", line 21, in nettoyer_repertoire
+    os.unlink(chemin)
+PermissionError: [WinError 5] Accès refusé: 'C:\\Users\\MLSD0903\\OneDrive - orange.com\\Bureau\\MEMOIRE\\projet\\siriusReport\\sirius\\reportingKYC\\extractions\\alerte_kyc_stock_GN01_2025-09-272.csv.gz'
+[INFO] 2025-09-27 22:31:31,965 django.server:81 - - Broken pipe from ('127.0.0.1', 55986)
+[WARNING] 2025-09-27 22:31:32,260 django.request:253 - Not Found: /favicon.ico
+[INFO] 2025-09-27 22:31:32,262 django.server:81 - - Broken pipe from ('127.0.0.1', 55990)
+[INFO] 2025-09-27 22:32:23,673 reportingKYC.views:38 - Chargement de la vue extractions
+[INFO] 2025-09-27 22:32:23,673 reportingKYC.services.extractions:24 - Répertoire vidé : C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\extractions
+[INFO] 2025-09-27 22:32:23,673 django.server:213 - "GET /extractions/ HTTP/1.1" 200 11622
+[WARNING] 2025-09-27 22:32:24,039 django.request:253 - Not Found: /favicon.ico
+[INFO] 2025-09-27 22:32:24,041 django.server:81 - - Broken pipe from ('127.0.0.1', 56020)
+[INFO] 2025-09-27 22:32:26,110 reportingKYC.views:38 - Chargement de la vue extractions
+[INFO] 2025-09-27 22:32:26,110 reportingKYC.services.extractions:24 - Répertoire vidé : C:\Users\MLSD0903\OneDrive - orange.com\Bureau\MEMOIRE\projet\siriusReport\sirius\reportingKYC\extractions
+[INFO] 2025-09-27 22:32:26,110 reportingKYC.views:44 - Formulaire de traitement validé
+[INFO] 2025-09-27 22:32:26,110 reportingKYC.services.extractions:34 - |----------------------Debut de recuperation des extractions --------------------------|
+[INFO] 2025-09-27 22:32:32,823 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:32:33,562 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:32:34,218 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:32:34,865 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:32:35,525 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:32:36,196 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:32:36,852 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:32:37,450 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:32:38,003 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:32:38,637 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:32:39,213 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:32:39,770 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:32:40,141 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:32:40,645 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:32:40,935 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:32:41,133 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:32:41,769 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:32:42,376 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:32:43,001 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:32:43,723 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:32:44,457 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:32:45,123 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:32:45,778 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:32:46,415 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:32:47,056 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:32:47,601 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:32:48,265 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:32:48,783 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:32:49,160 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:32:49,621 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:32:49,899 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:32:50,115 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:32:50,584 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:32:51,140 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:32:51,850 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:32:52,621 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:32:53,252 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:32:53,855 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:32:54,592 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:32:55,431 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:32:56,678 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:32:57,394 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:32:58,100 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:32:58,830 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:32:59,371 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:00,193 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:00,362 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:00,562 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:01,146 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:33:01,846 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:33:02,533 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:03,204 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:33:03,896 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:33:04,554 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:33:05,176 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:33:05,812 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:33:06,671 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:07,511 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:33:08,129 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:08,666 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:09,124 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:09,643 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:09,909 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:10,077 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:10,674 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:11,313 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:33:12,021 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[WARNING] 2025-09-27 22:33:12,460 reportingKYC.services.outlook:70 - Erreur en sauvegardant une PJ : (-2147352567, 'Une exception s’est produite.', (4096, 'Microsoft Outlook', "Impossible d'enregistrer la pièce jointe.", None, 0, -2147023672), None)
+[INFO] 2025-09-27 22:33:12,978 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:33:13,715 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:33:14,348 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:33:15,064 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:33:15,906 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:33:16,680 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:17,338 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:33:17,957 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:18,455 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:19,089 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:19,536 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:19,771 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:20,023 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:20,710 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:33:21,473 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:33:22,422 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:33:23,125 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:33:24,205 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:25,093 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:33:25,701 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:26,356 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:33:27,154 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:27,701 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:28,252 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:33:28,709 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:29,166 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:29,418 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:29,634 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:30,066 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:30,771 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:33:31,400 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:33:32,202 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:33:32,859 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:33:33,537 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:33:34,175 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:33:34,862 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:35,480 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:33:36,167 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:36,754 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:33:37,275 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:37,815 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:38,232 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:38,664 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:38,933 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:39,099 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:39,605 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:33:40,310 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:33:41,033 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:33:41,883 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:33:42,501 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:43,102 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:33:43,705 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:33:44,395 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:45,070 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:33:45,653 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:33:46,203 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:46,684 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:47,158 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:47,404 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:47,590 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:48,124 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:33:48,689 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:33:49,354 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:33:50,111 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:33:50,769 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:33:51,577 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:33:52,363 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:33:53,295 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:53,926 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:33:54,484 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:55,021 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:33:55,498 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:33:55,993 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:56,527 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:56,714 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:56,880 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:33:57,474 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:33:58,126 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:33:58,877 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:33:59,538 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:34:00,258 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:34:01,127 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:34:01,781 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:02,447 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:34:03,034 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:03,612 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:34:04,140 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:04,602 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:05,026 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:05,484 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:05,710 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:05,926 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:06,452 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:34:07,074 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:34:07,682 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-279.csv.gz 
+[INFO] 2025-09-27 22:34:08,333 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-276.csv.gz 
+[INFO] 2025-09-27 22:34:08,995 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:34:09,666 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:34:10,277 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-277.csv.gz 
+[INFO] 2025-09-27 22:34:10,888 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:11,514 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-278.csv.gz 
+[INFO] 2025-09-27 22:34:12,132 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:12,738 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:13,220 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BF01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:13,452 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:14,101 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CI01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:34:14,832 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CI01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:34:15,571 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CD01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:34:16,185 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CD01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:34:16,790 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CD01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:34:17,345 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_ML01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:17,970 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CI01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:18,596 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_ML01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:34:19,350 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GN01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:34:20,002 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CD01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:20,668 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CI01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:21,250 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CI01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:34:21,883 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GN01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:22,638 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CM01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:23,567 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GN01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:24,163 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CD01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:24,840 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_ML01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:34:25,503 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_MG01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:26,155 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SL01_2025-09-272.csv.gz 
+[INFO] 2025-09-27 22:34:26,750 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SL01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:27,316 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SL01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:27,876 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_LR01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:28,450 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_GN01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:34:28,972 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_ML01_2025-09-270.csv.gz 
+[INFO] 2025-09-27 22:34:29,599 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_OBCI_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:30,184 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_LR01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:30,649 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CD01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:34:31,015 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CI01_2025-09-275.csv.gz 
+[INFO] 2025-09-27 22:34:31,497 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CM01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:32,071 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_MG01_2025-09-271.csv.gz 
+[INFO] 2025-09-27 22:34:32,350 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_ML01_2025-09-274.csv.gz 
+[INFO] 2025-09-27 22:34:32,530 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_ML01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:32,813 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_GN01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:32,986 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_OBCI_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:33,255 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_CI01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:33,527 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_SL01_2025-09-273.csv.gz 
+[INFO] 2025-09-27 22:34:33,718 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_CD01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:33,917 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_BW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:34,125 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_CM01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:34,281 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_BW01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:34,515 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_OMIG_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:34,695 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_LR01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:34,911 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_MG01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:35,070 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_CF01_2025-09-26.csv.gz 
+[INFO] 2025-09-27 22:34:35,285 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_stock_OMIG_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:35,430 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_CF01_2025-09-26.csv.gz 
+[INFO] 2025-09-27 22:34:35,587 reportingKYC.services.outlook:68 - Fichier recçue : alerte_kyc_generation_SL01_2025-09-27.csv.gz 
+[INFO] 2025-09-27 22:34:36,046 reportingKYC.services.extractions:52 - |----------------------Fin de recuperation des extractions --------------------------|
+[INFO] 2025-09-27 22:34:36,047 reportingKYC.services.extractions:53 - 220 mails traités pour extraction
+[INFO] 2025-09-27 22:34:36,047 reportingKYC.views:51 - Extraction récupérée pour base None
+[INFO] 2025-09-27 22:34:36,194 django.server:213 - "POST /extractions/ HTTP/1.1" 200 22601
+[WARNING] 2025-09-27 22:34:36,504 django.request:253 - Not Found: /favicon.ico
+[INFO] 2025-09-27 22:34:36,510 django.server:81 - - Broken pipe from ('127.0.0.1', 56024)
